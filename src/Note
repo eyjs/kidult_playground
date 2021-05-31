@@ -1,0 +1,61 @@
+
+● ORM (Object Relational Mapping)
+  - 객체 모델링을 테이블 모델링과 Mapping
+  - Java 표준 ORM = JPA
+● JPA (Java Persistence API)
+  - 인터페이스 (자바 표준명세서)
+  - 구현체
+    -> Hibernate, Eclipse-Link 등
+    -> 구현체 추상화 : Spring Data JPA
+      --> JPA <- Hibernate <- Spring Data JPA
+  - JPA와 MyBatis(쿼리매퍼)의 차이점
+    -> ORM = 객체 매핑
+    -> Sql Mapper = 쿼리 매핑
+● 관계형 데이터베이스 관점 : 어떻게 데이터를 저장할 지
+  - SQL CRUD
+● 객체지향 프로그래밍 관점 : 기능과 속성을 한 곳에서 관리
+  - 추상화(객체), 캡슐화(Get,Set), 정보은닉(인터페이스), 다형성(오버라이딩)
+    ※ 패러다임 자체가 틀림.
+● 차이점 Example
+  (1) 객체지향 관점
+    - User user = findUser();
+      Group group = user.GetGroup();
+  (2) 관계형 데이터베이스 관점
+    - User user = userDao.findUser();
+      Group group = groupDao.findGroup(user.getGroupId());
+      ※ 유저 따로 그룹 따로 조회 -> 각 객체간 관계 식별 불가능.
+ ● JPA 개념 숙지 후 개발 프로세스
+   - 객체지향 프로그래밍 -> JPA 관계형 데이터베이스 SQL 생성
+ ● JPA 개념 미숙지 후 개발 프로세스 (SQL Mapper 사용)
+   - 객체지향 프로그래밍 -> 각 객체 필드 추출 -> RDBMS 테이블 구조 동일하게 커스터마이징 -> SQL 작성
+
+ ● 등록/ 수정/ 조회 API 만들기
+  API를 만들기 위해 총 3개 클래스 필요.
+   - Request 데이터를 받을 Dto
+   - API 요청을 받을 Controller
+   - 트랜잭션, 도메인 기능 간의 순서를 보장하는 Service
+
+ ● Spring 웹 계층.
+   (1) Web Layer
+     - 흔히 사용하는 컨트롤러(@Controller)와 JSP/Freemarker 등의 View Template 영역.
+     - 이외에도 필터(@Filter), 인터셉터, 컨트롤러 어드바이스(@ControllerAdvice)등 외부 요청과 응답에 대한 전반적인 영역.
+   (2) Service Layer
+     - @Service에 사용되는 서비스 영역.
+     - 일반적으로 Controller와 Dao의 중간 영역에서 사용.
+     - @Transactional이 사용되어야 하는 영역.
+   (3) Repository Layer
+     - Database와 같이 데이터 저장소에 접근하는 영역.
+     - Dao 역할로 이해하면 쉬움.
+   (4) Dtos
+     - Dto(Data Transfer Object)는 계층 간에 데이터 교환을 위한 객체를 이야기하며 Dtos는 이들의 영역 의미.
+     - 예를 들어 뷰 템플릿 엔진에서 사용될 객체나 Repository Layer에서 결과로 넘겨준 객체 등
+   (5) Domain Model
+     - 도메인이라 불리는 개발 대상을 모든 사람이 동일한 관점에서 이해할 수 있고 공유할 수 있도록 단순화시킨 것을 도메인 모델이라 한다.
+     - 이를테면 택시 앱이라고 하면 배차, 탑승, 요금 등이 모두 도메인
+     - @Entity가 사용된 영역 역시 도메인 모델
+     - 다만, 무조건 데이터베이스의 테이블과 관계가 있어야만 하는 것은 아님.
+     - VO(Value Object)처럼 값 객체들도 이 영역에 해당.
+  위 5가지 Layer에서 비즈니스 로직을 처리해야 할 곳은 Domain Layer에서 처리한다.
+  기존 Legacy 프로젝트 구조에서 비즈니스 로직은 Service Layer에서 트랜잭션 스크립트 방식으로 처리하였다.
+  Domain Layer에서 비즈니스 로직 처리 시 서비스 메소드는 트랜잭션과 도메인 간의 순서만 보장.
+
