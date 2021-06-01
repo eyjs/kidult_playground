@@ -1,6 +1,7 @@
 package com.kidult_playground;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /*
  메인클래스 : Application Class
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
   - 항상 프로젝트 최상위 위치해야함.
  */
 
+@EnableJpaAuditing
 @SpringBootApplication
 public class Application {
     public static void main(String[] args){

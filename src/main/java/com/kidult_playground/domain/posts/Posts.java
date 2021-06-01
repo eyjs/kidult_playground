@@ -1,5 +1,6 @@
 package com.kidult_playground.domain.posts;
 
+import com.kidult_playground.domain.BaseTimeEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Builder;
@@ -8,7 +9,7 @@ import javax.persistence.*;
 @Getter // ⑥
 @NoArgsConstructor // ⑤
 @Entity // ①
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id // ②
     @GeneratedValue(strategy = GenerationType.IDENTITY) // ③
@@ -76,7 +77,7 @@ public class Posts {
     }
   }
   기본적으로 생성자를 통한 값 변경을 처리하지만 빌더(Builder)를 사용하여 처리.
-    -> 생성자 Argument Input시 에러 발생 방지.
+    -> 생성자 Argument Input 시 에러 발생 방지.
     ex) public Example(String a, String b){
       this.a = b;
       this.b = a;
