@@ -2,12 +2,12 @@
 ### 커뮤니티 사이트 토이 프로젝트
 ### 기간 : 05 / 29 ~ 06 / 30
 ### 기술스택 
- ● front-end : Mustache/ CSS3(BootStrap4)/ JavaScript(ReactJS)
- ● BackEnd :  SpringBoot + JPA(Spring JPA) + PostgreSQL +H2(JPA Test)
- ● Security : Spring Security + Spring Security OAuth 2.0 
+ ● front-end : Mustache/ CSS3(BootStrap4)/ JavaScript(ReactJS)   
+ ● BackEnd :  SpringBoot + JPA(Spring JPA) + PostgreSQL +H2(JPA Test)   
+ ● Security : Spring Security + Spring Security OAuth 2.0   
  ● Infra : AWS EC2, S3 (Linux)   
  ● VCS : Github   
- ● CI & CD : Travis CI    
+ ● CI & CD : Travis CI       
   
 ### 참조 레퍼런스 및 학습 로드맵
  ● HTML5/ CSS3 [노마드코더 코코아톡 클론 학습 필요]
