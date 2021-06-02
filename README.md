@@ -1,13 +1,13 @@
 # kidult_playground
-##Toy Project
-###커뮤니티 사이트
-###기술스택 
+## Toy Project
+### 커뮤니티 사이트
+### 기술스택 
   Front : Mustache +  Bootstrap4, JavaScript(JQuery, WebSocket)
   BackEnd :  SpringBoot + JPA(Spring JPA) + PostgreSQL +H2(JPA Test)
   Infra : AWS EC2, S3 (Linux)
   VCS : Github
   CI & CD : Travis CI 
-###기간 : 05 / 29 ~ 06 / 30
+### 기간 : 05 / 29 ~ 06 / 30
  ● 메인화면
   (1) 기능
    - 각 카테고리별 게시판 이동.
