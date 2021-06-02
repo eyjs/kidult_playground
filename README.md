@@ -9,11 +9,11 @@
    - VCS : Github   
    - CI & CD : Travis CI       
 ### 참조 레퍼런스 및 학습 로드맵
- ● HTML5/ CSS3 [노마드코더 코코아톡 클론 학습 필요]   
- ● Template Engine : Mustache [Github 공식문서 및 블로그 내용정리]   
- ● CSS Framework : Bootstrap4 [BootStrap4 공식문서]   
- ● Javascript Library : React.JS [노마드코더 클론코딩 예정]   
- ● SpringBoot : 스프링 부트와 AWS로 혼자 구현하는 웹 서비스(이동욱 저), 토비의 스프링3.1 [미구매]
+   - HTML5/ CSS3 [노마드코더 코코아톡 클론 학습 필요]   
+   - Template Engine : Mustache [Github 공식문서 및 블로그 내용정리]   
+   - CSS Framework : Bootstrap4 [BootStrap4 공식문서]   
+   - Javascript Library : React.JS [노마드코더 클론코딩 예정]   
+   - SpringBoot : 스프링 부트와 AWS로 혼자 구현하는 웹 서비스(이동욱 저), 토비의 스프링3.1 [미구매]
 ### 화면 별 정리 
 #### 메인 화면   
    - 각 카테고리별 게시판 이동.      
