@@ -1,11 +1,11 @@
 # kidult_playground
 ### 커뮤니티 사이트 토이 프로젝트
 ### 기술스택 
-  Front : Mustache +  Bootstrap4, JavaScript(JQuery, WebSocket)
-  BackEnd :  SpringBoot + JPA(Spring JPA) + PostgreSQL +H2(JPA Test)
-  Infra : AWS EC2, S3 (Linux)
-  VCS : Github
-  CI & CD : Travis CI 
+  Front : Mustache +  Bootstrap4, JavaScript(JQuery, WebSocket)   
+  BackEnd :  SpringBoot + JPA(Spring JPA) + PostgreSQL +H2(JPA Test)   
+  Infra : AWS EC2, S3 (Linux)   
+  VCS : Github   
+  CI & CD : Travis CI    
 ### 기간 : 05 / 29 ~ 06 / 30
  ● 퍼블리싱 & front-end
    - HTML5/ CSS3 [노마드코더 코코아톡 클론 학습 필요]
