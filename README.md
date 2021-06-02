@@ -1,17 +1,19 @@
 # kidult_playground
 ### 커뮤니티 사이트 토이 프로젝트
-### 기술스택 
-  Front : Mustache +  Bootstrap4, JavaScript(JQuery, WebSocket)   
-  BackEnd :  SpringBoot + JPA(Spring JPA) + PostgreSQL +H2(JPA Test)   
-  Infra : AWS EC2, S3 (Linux)   
-  VCS : Github   
-  CI & CD : Travis CI    
 ### 기간 : 05 / 29 ~ 06 / 30
- ● 퍼블리싱 & front-end
-   - HTML5/ CSS3 [노마드코더 코코아톡 클론 학습 필요]
-   - Template Engine : Mustache [Github 공식문서 및 블로그 내용정리]
-   - CSS Framework : Bootstrap4 [BootStrap4 공식문서]
-   - Javascript Library : React.JS [노마드코더 클론코딩 예정]
+### 기술스택 
+ ● front-end : Mustache/ CSS3(BootStrap4)/ JavaScript(ReactJS)
+ ● BackEnd :  SpringBoot + JPA(Spring JPA) + PostgreSQL +H2(JPA Test)
+ ● Security : Spring Security + Spring Security OAuth 2.0 
+ ● Infra : AWS EC2, S3 (Linux)   
+ ● VCS : Github   
+ ● CI & CD : Travis CI    
+  
+### 참조 레퍼런스 및 학습 로드맵
+ ● HTML5/ CSS3 [노마드코더 코코아톡 클론 학습 필요]
+ ● Template Engine : Mustache [Github 공식문서 및 블로그 내용정리]
+ ● CSS Framework : Bootstrap4 [BootStrap4 공식문서]
+ ● Javascript Library : React.JS [노마드코더 클론코딩 예정]
 ### 화면 별 정리 
  ● 메인 화면
   (1) 기능
