@@ -1,5 +1,6 @@
 package com.kidult_playground.web;
 
+import com.kidult_playground.config.auth.dto.SessionUser;
 import com.kidult_playground.service.posts.PostsService;
 import com.kidult_playground.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -7,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import javax.servlet.http.HttpSession;
 /*
  ① Model
    - 서버 템플릿 엔진에서 사용할 수 있는 객체를 저장할 수 있다.
@@ -18,10 +21,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class IndexController {
 
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model) {  // ①
-        model.addAttribute("posts", postsService.findAllDesc());
+        model.addAttribute("posts",
+                postsService.findAllDesc());
+
+        SessionUser user = (SessionUser) httpSession.
+                getAttribute("user");
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
 
         return "index";
     }

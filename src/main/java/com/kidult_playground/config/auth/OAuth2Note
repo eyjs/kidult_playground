@@ -1,0 +1,45 @@
+스프링 시큐리티 & OAuth 2.0 설정 흐름도.
+ - 구글서비스 등록
+   → OAuth 설정파일 작성
+     → 구글 로그인 연동
+       → 스프링 시큐리티 설정
+
+1. 구글 서비스 등록
+ (1) https://console.cloud,google.com
+ (2) 프로젝트 생성
+ (3) API 및 서비스 항목 ->
+    사용자 인증 정보 만들기 ->
+        OAuth 클라이언트 ID ->
+            웹서비스 생성 ->
+                승인된 리다이렉션 등록 : http://localhost:8080/login/oauth2/code/google
+       -> clientId & clientSecret Get
+2. OAuth 설정파일 작성
+ (1) 경로 : src/main/resource/
+   ① application-oauth.properties
+   ② application.properties
+ (2) 내용 :
+   ① spring.security.oauth2.client.registration.google.client-id='clientId'
+   ② spring.security.oauth2.client.registration.google.client-secret='clientSecret'
+   ③ spring.security.oauth2.client.registration.google.scope='profile, email'
+ (3) 주의사항 : github ignore 시켜야 함. (개인정보)
+3. 구글 로그인 연동
+ (1) 구조
+   ① 경로 : main = src/main/java/com/kidult_playground
+     -1- User Entity 생성
+       ● main/domain/user/User
+     -2- 권한관리용 enum 클래스 생성
+       ● main/domain/user/Role
+         ※ 시큐리티 주의점 : 권한코드에 ROLE_이 접두어로 붙어야 인식함.
+     -3- User Repository 생성
+       ● main/domain/user/UserRepository
+         ※ 특이점 : 소셜 로그인으로 반환되는 값 중 email을 통해 이미 생성된 사용자인지 처음 가입하는 사용자인지
+                   판단하는 메소드 필요. -> Optional<User> findByEmail(string email);
+     -4- 스프링 시큐리티 설정
+       ● build.gradle 스프링 시큐리티 의존성 추가
+         -> compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+       ● 라이브러리 사용하기 위한 설정 코드 작성
+         -> 경로 : main/config/auth
+         -> 필요한 설정파일
+           : SecurityConfig.cs
+           : CustomOAuth2UserService.cs
+           : OAuthAttributes
